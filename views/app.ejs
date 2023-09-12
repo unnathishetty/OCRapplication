@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OCR application</title>
+    <style>
+      body {
+        display: grid;
+        background-image: radial-gradient( darkorange,rgb(234, 234, 140));
+        background-repeat: no-repeat;
+        background-size: cover;
+        place-content: center;
+        height: 100vh;
+        font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+      }
+      .resarea {
+        background-color: rgb(241, 185, 117);
+        padding: 1em;
+        border-radius: 5px;
+        border: 1px solid darkgoldenrod;
+        outline: none;
+        backdrop-filter: blur(20);
+      }
+
+      .div1 {
+        margin-bottom: 2em;
+      }
+      .btn {
+        background-color: rgb(176, 173, 158);
+        color: white;
+        margin-top: 1em;
+        margin-left: 12em;
+      }
+      .upload {
+        font-size: 25px;
+        margin-left: 5em;
+      }
+      .inp {
+        margin-top: 2em;
+        margin-left: 8em;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="div1">
+        <form
+          class="frm"
+          action="/extracttextfromimage"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <label class="upload" for="file">Upload IMG</label>
+          <br /><input
+            class="inp"
+            type="file"
+            accept="image/*"
+            required
+            name="file"
+            id=""
+          />
+          <br />
+          <button class="btn">Extract</button>
+        </form>
+      </div>
+      <textarea class="resarea" rows="10" cols="50">
+            <%=data%>
+        </textarea
+      >
+    </div>
+  </body>
+</html>
